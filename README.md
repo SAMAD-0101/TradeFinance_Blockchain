@@ -88,10 +88,10 @@ Use these accounts to explore different roles within the system.
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | `admin@example.com` | `admin123` |
-| **Corporate** | `corp@example.com` | `corp123` |
-| **Bank** | `bank@example.com` | `bank123` |
-| **Auditor** | `auditor@example.com` | `auditor123` |
+| **Admin** | `admin@tradefinance.com` | `AdminSecure2026!` |
+| **Corporate** | `corporate@company.com` | `CorpSecure2026!` |
+| **Bank** | `bank@globalbank.com` | `BankSecure2026!` |
+| **Auditor** | `auditor@auditfirm.com` | `AuditSecure2026!` |
 
 ---
 
