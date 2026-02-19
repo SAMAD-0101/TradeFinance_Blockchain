@@ -57,3 +57,8 @@ def health_check():
 async def startup_event():
     """Start background tasks on startup"""
     start_scheduler()
+
+
+# Handler for Netlify/AWS Lambda
+from mangum import Mangum
+handler = Mangum(app)
