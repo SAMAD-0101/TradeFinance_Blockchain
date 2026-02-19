@@ -1,0 +1,39 @@
+plugins = []
+headers = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\ASUS\\Downloads\\TradeFinance_Blockchain-TF_Blockchain-Abdul Samad\\TradeFinance_Blockchain-TF_Blockchain-Abdul_Samad\\frontend\\dist"
+publishOrigin = "ui"
+commandOrigin = "ui"
+base = "C:\\Users\\ASUS\\Downloads\\TradeFinance_Blockchain-TF_Blockchain-Abdul Samad\\TradeFinance_Blockchain-TF_Blockchain-Abdul_Samad\\frontend"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
