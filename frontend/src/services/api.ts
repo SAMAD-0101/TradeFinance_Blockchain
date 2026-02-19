@@ -1,7 +1,20 @@
 /* Project: Trade Finance Blockchain Explorer | Developer: Abdul Samad | FRS Standard Compliance */
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
+// Construct API URL: Handle localhost fallback and Render's bare hostname (host only)
+let apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
+
+// Ensure protocol (Render provides host without protocol)
+if (!apiUrl.startsWith('http')) {
+    apiUrl = `https://${apiUrl}`;
+}
+
+// Ensure API version path
+if (!apiUrl.includes('/api/v1')) {
+    apiUrl = `${apiUrl}/api/v1`;
+}
+
+const API_BASE_URL = apiUrl;
 
 // Create axios instance
 export const apiClient = axios.create({
