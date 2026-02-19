@@ -18,13 +18,9 @@ services:
   # Frontend Service (React/Vite)
   - type: web
     name: trade-finance-frontend
-    env: static
+    env: node
     buildCommand: cd frontend && npm install && npm run build
-    publishDir: frontend/dist
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: /index.html
+    startCommand: cd frontend && npx serve -s dist -l $PORT
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
