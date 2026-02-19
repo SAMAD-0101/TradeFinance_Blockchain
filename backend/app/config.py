@@ -20,10 +20,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
     
     # S3
-    AWS_ACCESS_KEY_ID: str
-    AWS_SECRET_ACCESS_KEY: str
+    AWS_ACCESS_KEY_ID: str | None = None
+    AWS_SECRET_ACCESS_KEY: str | None = None
     AWS_REGION: str = "us-east-1"
-    S3_BUCKET_NAME: str
+    S3_BUCKET_NAME: str | None = None
     S3_ENDPOINT_URL: str | None = None
     S3_PUBLIC_ENDPOINT_URL: str | None = None
     
