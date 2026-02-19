@@ -10,9 +10,7 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
     
     # Database
-    DATABASE_URL: str
-    DATABASE_POOL_SIZE: int = 20
-    DATABASE_MAX_OVERFLOW: int = 10
+    DATABASE_URL: str = "sqlite:///./test.db"  # Default fallback
     
     # JWT
     SECRET_KEY: str
@@ -34,5 +32,11 @@ class Settings(BaseSettings):
         env_file = ".env"
         case_sensitive = True
 
+    def __init__(self, **values):
+        super().__init__(**values)
+        import os
+        # Fallback for Netlify/Neon automatic env vars
+        if not self.DATABASE_URL and os.getenv("NETLIFY_DATABASE_URL"):
+            self.DATABASE_URL = os.getenv("NETLIFY_DATABASE_URL")
 
 settings = Settings()
