@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     
     # Database
     DATABASE_URL: str = "sqlite:///./test.db"  # Default fallback
+    DATABASE_POOL_SIZE: int = 5
+    DATABASE_MAX_OVERFLOW: int = 10
     
     # JWT
     SECRET_KEY: str
